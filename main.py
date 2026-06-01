@@ -11,11 +11,6 @@ class User:
         self.acc_type = acc_type
         self.acc_no = acc_no
 
-    
-
-
-
-
     def add_user():
         print("\n<-- Add new user -->\n")
         name = input("What is user's Name: ")
@@ -54,7 +49,18 @@ save_users(user_database)
 
 
 if __name__ == "__main__":
-    User = User()
+    user = User()
 
     while True:
         print("\n<== PyBank Banking System ==>\n")
+        print("1. Add New User")
+        print("2. View Users")
+        print("5. Exit")
+
+        try:
+            option = int(input("\nChoose an option: "))
+
+            if option == 1:
+                user.add_user()
+        
+        except ValueError as e: print(f"\nError : {e}")
